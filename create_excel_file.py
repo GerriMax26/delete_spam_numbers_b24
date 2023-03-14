@@ -1,9 +1,13 @@
 import xlsxwriter
+import os
 
 def writer_file (array_numbers: list) -> None:
    """Creates an excel file with phone numbers"""
    
-   book = xlsxwriter.Workbook(r"C:/Users/admin/Desktop/delete_spam_numbers_b24/spam_contacts.xlsx")
+   path = os.path.abspath(os.path.dirname(__file__)) + '\spam_contacts.xlsx'
+   
+   book = xlsxwriter.Workbook(path)
+   
    page = book.add_worksheet('page_1')
             
    page.set_column("A:A", 15)
