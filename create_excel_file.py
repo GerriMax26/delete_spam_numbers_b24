@@ -1,6 +1,6 @@
 import xlsxwriter
 
-def writer_file (function_name: list) -> None:
+def writer_file (array_numbers: list) -> None:
    """Creates an excel file with phone numbers"""
    
    book = xlsxwriter.Workbook(r"C:/Users/admin/Desktop/delete_spam_numbers_b24/spam_contacts.xlsx")
@@ -11,7 +11,7 @@ def writer_file (function_name: list) -> None:
    row: int = 0 
    column: int = 0
     
-   for item in function_name:
+   for item in array_numbers:
        
       page.write(row, column, item)
       row += 1
